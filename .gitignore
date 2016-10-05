@@ -1,4 +1,15 @@
+
 *.class
+*.DS_Store
+*.o
+
+/exdata/
+/coco/
+/ppdata/
+/build/
+
+REVISION
+VERSION
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
