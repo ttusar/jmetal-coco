@@ -1,3 +1,5 @@
+
+import jmetal.core.Algorithm;
 import jmetal.operators.crossover.Crossover;
 import jmetal.operators.crossover.CrossoverFactory;
 import jmetal.operators.mutation.Mutation;
@@ -6,7 +8,7 @@ import jmetal.operators.selection.Selection;
 import jmetal.operators.selection.SelectionFactory;
 import jmetal.metaheuristics.nsgaII.NSGAII;
 import jmetal.util.JMException;
-import jmetal.core.Algorithm;
+import jmetal.util.PseudoRandom;
 import java.util.Random;
 import java.util.HashMap;
 
@@ -36,6 +38,11 @@ public class Experiment {
 	 * algorithm and the COCO platform).
 	 */
 	public static Problem PROBLEM;
+
+	/**
+	 * The random seed. Change if needed.
+	 */
+	public static final long RANDOM_SEED = 0xdeadbeef;
 
 	/**
 	 * The main method initializes the random number generator and calls the example experiment on the
@@ -84,6 +91,8 @@ public class Experiment {
 		// System.out.flush();
 		
 		/* Call the example experiment */
+		RandomGenerator generator = new RandomGenerator(RANDOM_SEED);
+		PseudoRandom.setRandomGenerator(generator);
 		experiment("bbob-biobj", "bbob-biobj", algorithm);
 
 		/* Uncomment the line below to run the same example experiment on the bbob suite
