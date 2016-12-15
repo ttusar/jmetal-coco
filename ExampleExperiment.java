@@ -91,7 +91,7 @@ public class ExampleExperiment {
 					+ "algorithm_info: \"A simple random search algorithm\"";
 
 			/* Initialize the suite and observer */
-			Suite suite = new Suite(suiteName, "year: 2016", "dimensions: 2,3,5,10,20,40");
+			Suite suite = new Suite(suiteName, "year: 2016", "dimensions: 2 function_indices: 10");
 			Observer observer = new Observer(observerName, observerOptions);
 			Benchmark benchmark = new Benchmark(suite, observer);
 
