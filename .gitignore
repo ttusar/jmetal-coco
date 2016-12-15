@@ -3,6 +3,8 @@
 *.DS_Store
 *.o
 
+FUN_*
+
 /exdata/
 /coco/
 /ppdata/
