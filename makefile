@@ -2,8 +2,8 @@
 compile:
 	javac CocoJNI.java
 	javah CocoJNI
-	gcc -I /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/JavaVM.framework/Versions/A/Headers/ -c CocoJNI.c 
-	gcc -I /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/JavaVM.framework/Versions/A/Headers/ -o libCocoJNI.so -fPIC -shared CocoJNI.c
+	gcc -I /usr/lib/jvm/java-8-oracle/include/ -I /usr/lib/jvm/java-8-oracle/include//linux -c CocoJNI.c 
+	gcc -I /usr/lib/jvm/java-8-oracle/include/ -I /usr/lib/jvm/java-8-oracle/include//linux -o libCocoJNI.so -fPIC -shared CocoJNI.c
 	javac Problem.java
 	javac Benchmark.java
 	javac Observer.java
